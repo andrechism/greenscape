@@ -20,7 +20,7 @@ const Footer = () => {
                         <span className="text-2xl uppercase font-semibold">Newsletter</span>
                     </div>
                     <form className="flex flex-col text-primary">
-                        <input className="mt-4 rounded-lg px-2 h-10" type="text" placeholder="Your Name" />
+                        <input className="mt-4 rounded-lg px-2 h-10" type="text" placeholder="Your name" />
                         <input className="mt-4 rounded-lg px-2 h-10" type="email" placeholder="jessica@example.com" />
                         <button className="flex items-center mx-auto mt-4 h-10 px-8 bg-white rounded-full" type="submit">Subscribe</button>
                     </form>
@@ -56,7 +56,7 @@ const Footer = () => {
                 </section>
             </div>
             <div className="w-full flex h-[1px] bg-white mt-16 xl:mt-4" />
-            <div className="max-w-screen-2xl w-full flex justify-center py-4">
+            <div className="max-w-screen-2xl w-full flex justify-center py-4 text-center">
                 <p>© 2023 GreenScape by EcoTech Solutions. All rights reserved.</p>
             </div>
         </footer>

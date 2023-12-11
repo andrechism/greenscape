@@ -1,10 +1,28 @@
+import { ModalProvider } from "@/components/contexts/ModalContext"
 import DefaultLayout from "@/components/layouts/DefaultLayout"
+import CardGallery from "@/components/sections/CardGallery"
+import SearchBanner from "@/components/sections/SearchBanner"
+import { storesMock } from "@/mocks/stores"
 
-const ExplorePage = () => {
+type ExplorePageParams = {
+    searchParams: {
+        search?: string
+    }
+}
+
+const ExplorePage = async ({
+    searchParams
+}: ExplorePageParams) => {
+
+    const filteredStores = storesMock.filter((store) => store.title.toLowerCase().includes(searchParams.search?.toLowerCase()?.trim() ?? ''))
+
     return (
-        <DefaultLayout>
-            <section>explore section</section>
-        </DefaultLayout>
+        <ModalProvider>
+            <DefaultLayout>
+                <SearchBanner search={searchParams.search} />
+                <CardGallery stores={filteredStores} />
+            </DefaultLayout>
+        </ModalProvider>
     )
 }
 
